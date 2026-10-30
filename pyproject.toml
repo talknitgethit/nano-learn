@@ -1,0 +1,27 @@
+[project]
+name = "nano-learn"
+version = "0.1.0"
+description = "From-first-principles neural nets: tensors → backprop → attention → tiny GPT"
+readme = "README.md"
+authors = [
+    { name = "Nitin", email = "nitinnair44@gmail.com" }
+]
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "numpy>=2.0",
+    "matplotlib>=3.8",
+    "torch>=2.5",
+]
+
+
+[build-system]
+requires = ["uv_build>=0.13.6,<0.14.0"]
+build-backend = "uv_build"
+
+[tool.uv.sources]
+torch = { index = "pytorch-cu124" }
+
+[[tool.uv.index]]
+name = "pytorch-cu124"
+url = "https://download.pytorch.org/whl/cu124"
+explicit = true
